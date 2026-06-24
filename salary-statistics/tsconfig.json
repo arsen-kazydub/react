@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es6",
+    "lib": ["es2020", "dom"], // Added es2020
+    "jsx": "preserve",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src", // 'src' is the base directory for module resolution
+    "paths": {
+      "@app/*": ["*"], // map '@app/*' to the root of the 'src' directory
+    },
+    "types": [
+      "jest",
+      "@testing-library/jest-dom"
+    ]
+  }
+}
