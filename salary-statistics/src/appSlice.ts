@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { settings } from '@app/settings'
+import { fetchSalaries } from '@app/appThunks'
+import { initialYearsState } from '@app/utils/initialYearsState'
 
 interface AppState {
   type: string
@@ -8,6 +10,8 @@ interface AppState {
   average: boolean
   years: Record<string, boolean>
   salaries: Record<string, number[]>
+  status: 'loading' | 'error' | 'success'
+  errorMessage: string | null
 }
 
 const initialState: AppState = {
@@ -16,6 +20,8 @@ const initialState: AppState = {
   average: false,
   years: {},
   salaries: {},
+  status: 'loading',
+  errorMessage: null,
 }
 
 const appSlice = createSlice({
@@ -34,6 +40,21 @@ const appSlice = createSlice({
     setYears: (state, action: PayloadAction<Record<string, boolean>>) => {
       state.years = { ...state.years, ...action.payload }
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchSalaries.pending, (state) => {
+        state.status = 'loading'
+      })
+      .addCase(fetchSalaries.rejected, (state, action) => {
+        state.status = 'error'
+        state.errorMessage = action.error.message || 'Unknown error'
+      })
+      .addCase(fetchSalaries.fulfilled, (state, action) => {
+        state.status = 'success'
+        state.salaries = action.payload
+        state.years = initialYearsState(action.payload)
+      })
   },
 })
 
