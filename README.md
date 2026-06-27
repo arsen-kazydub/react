@@ -1,3 +1,3 @@
 # React
 
-A mono-repository of React applications.
+A monorepo of React applications.
