@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /react/salary-statistics/
+
+# Prevent an infinite loop: don't rewrite anything if "frontend" was requested
+RewriteCond %{REQUEST_URI} !/frontend/ [NC]
+
+# Rewrite everything to the "frontend" folder
+RewriteRule ^(.*)$ frontend/$1 [L]
