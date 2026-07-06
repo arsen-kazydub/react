@@ -84,7 +84,7 @@ and each value is an array of twelve monthly salary values.
 
 **Note:** For the current month and all future months of the current year, the API returns `0`.
 
-**Response Example:**
+**Response Example**
 
 ```json
 {
