@@ -4,37 +4,31 @@ A headless WordPress + React application for visualizing salary data across mont
 It presents trends through tables and charts with dynamic filtering. The backend is powered
 by a custom WordPress REST API that provides either real or generated demo data.
 
+**Live Demo:** https://demo.arsen.pro/react/salary-statistics/
 
-## Preview
 
-**Table**
+## Screenshots
+
+### Table
 
 <kbd>
   <img src="screenshots/salary-statistics-table.webp"
        alt="Salary data displayed in a table with years as rows, months as columns, yearly totals, and summary statistics">
 </kbd>
 
-<div>&nbsp;</div>
-
-**Timeline**
+### Timeline
 
 <kbd>
   <img src="screenshots/salary-statistics-timeline.webp"
        alt="Salary data displayed in a continuous line chart across months for the selected years">
 </kbd>
 
-<div>&nbsp;</div>
-
-**Comparison**
+### Comparison
 
 <kbd>
   <img src="screenshots/salary-statistics-comparison.webp"
        alt="Salary data displayed in a line chart comparing selected years across a shared twelve-month axis">
 </kbd>
-
-<div>&nbsp;</div>
-
-**Live Demo:** https://demo.arsen.pro/react/salary-statistics/
 
 
 ## Features
@@ -84,7 +78,8 @@ and each value is an array of twelve monthly salary values.
 
 **Note:** For the current month and all future months of the current year, the API returns `0`.
 
-**Response Example**
+
+### Response Example
 
 ```json
 {
