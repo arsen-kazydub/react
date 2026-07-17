@@ -51,8 +51,8 @@ by a custom WordPress REST API that provides either real or generated demo data.
 * Chart.js
 * WordPress REST API
 * PHP
-* HTML5
-* CSS3
+* HTML
+* CSS
 * Jest
 * React Testing Library
 
