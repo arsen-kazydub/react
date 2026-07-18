@@ -9,10 +9,10 @@ import { Filters } from '@app/components/filters/Filters'
 import { Table } from '@app/components/table/Table'
 
 export function App() {
-  const dispatch = useDispatch<AppDispatch>()
-  const status = useSelector((state: RootState) => state.app.status)
+  const dispatch     = useDispatch<AppDispatch>()
+  const status       = useSelector((state: RootState) => state.app.status)
   const errorMessage = useSelector((state: RootState) => state.app.errorMessage)
-  const appType = useSelector((state: RootState) => state.app.type)
+  const appType      = useSelector((state: RootState) => state.app.type)
 
   React.useEffect(() => {
     dispatch(fetchSalaries())
